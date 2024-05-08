@@ -10,7 +10,7 @@ const IdPage = async ({ params }: { params: { id: string } }) => {
       <Editor code={data && (data.content)} />
       <div className='mt-2 '>
         <h1> Post Details </h1>
-        <UpdateForm id={params.id}  />
+        <UpdateForm id={params.id} />
       </div>
     </section>
   )

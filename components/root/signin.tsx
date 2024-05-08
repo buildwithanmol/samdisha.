@@ -40,7 +40,7 @@ const SignInComponent = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4 max-w-[400px]'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4 max-w-[400px] w-full'>
             <div className=''>
                 <Link href={'/'}>
                     <h1 className='text-font font-medium text-2xl'>

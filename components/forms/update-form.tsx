@@ -128,7 +128,7 @@ const UpdateForm = ({ id }: { id: string }) => {
                 <button onClick={handleAddTocItem} className='bg-container text-white px-4 my-2 py-2 rounded-md'>Add</button>
             </div>
             <div>
-                <button className='w-full bg-font py-2 rounded-md' onClick={handleSubmit(onSubmit)}> Create Post </button>
+                <button className='w-full bg-font py-2 rounded-md' onClick={handleSubmit(onSubmit)}> Update Post </button>
             </div>
         </div>
     )

@@ -1,3 +1,4 @@
+import AdminLogout from '@/components/buttons/admin-logout'
 import Link from 'next/link'
 import React from 'react'
 
@@ -25,6 +26,9 @@ const PanelLayout = ({ children }: { children: Readonly<React.ReactNode> }) => {
                                 </Link>
                             </div>
                         ))}
+                        <div>
+                            <AdminLogout />
+                        </div>
                     </div>
                 </aside>
                 {children}

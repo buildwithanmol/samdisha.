@@ -22,7 +22,6 @@ export default function Editor({ code }: { code?: string }) {
                 value={content}
                 onChange={(e: any) => { setContent(e) }}
             />
-            <MDEditor.Markdown source={content} style={{ whiteSpace: 'pre-wrap' }} />
         </div>
     );
 }
