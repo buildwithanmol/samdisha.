@@ -5,8 +5,8 @@ import React from 'react'
 const Footer = async () => {
   const data = await get_categories();
   return (
-    <footer className='bg-gradient-to-t from-primary to-transition'>
-      <div className='center grid grid-cols-4 py-6'>
+    <footer className='bg-gradient-to-t from-primary to-transition px-8 md:px-0'>
+      <div className='center grid grid-cols-1   md:grid-cols-4 py-6'>
         <div className='col-span-2'>
           <div>
             <h1 className='text-font font-medium text-2xl'><span className='text-white'>Samdisha</span>.</h1>
@@ -14,7 +14,7 @@ const Footer = async () => {
           </div>
           <br />
           <br />
-          <p className='light_text'>© 2023 Samdisha. All rights reserved.</p>
+          <p className='light_text hidden md:block'>© 2023 Samdisha. All rights reserved.</p>
         </div>
         <div className='col-span-1'>
           <p className='light_text'>Topics</p>

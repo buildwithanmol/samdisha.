@@ -5,7 +5,7 @@ import Sidebar from "@/components/root/sidebar";
 export default async function Home() {
   const data = await get_blogs(0, 20);
   return (
-    <main className="grid grid-cols-3 gap-4 py-8 center">
+    <main className="grid px-8 md:px-0  grid-cols-1 md:grid-cols-3 gap-4 py-8 center">
       <div className="col-span-2">
         <h1 className='text-accent uppercase text-md font-light  tracking-widest '> Recently published </h1>
         <br />

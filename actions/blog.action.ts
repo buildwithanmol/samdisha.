@@ -16,7 +16,7 @@ export const get_blogs = async (page?: number, limit?: number, category?: string
             query = {};
         }
 
-        const blogs = await Blog.find(query).skip(Number(page) * Number(limit)).limit(Number(limit));
+        const blogs = await Blog.find(query).skip(Number(page) * Number(limit)).limit(Number(limit)).sort({_id: -1});
 
         if (blogs.length === 0) {
             return null

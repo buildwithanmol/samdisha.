@@ -7,9 +7,52 @@ body {
 }
 
 .center {
-  @apply max-w-screen-lg mx-auto
+  @apply max-w-screen-lg mx-auto;
 }
 
 .light_text {
-  @apply text-sm text-font tracking-widest
+  @apply text-sm text-font tracking-widest;
+}
+
+.like-container {
+  position: relative;
+}
+
+.like-text {
+  position: absolute;
+  bottom: 100%; /* Initially position it above the heart */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.like-container .like-text {
+  animation: moveUpAndFade 1.5s ease forwards; /* Animation for like action */
+}
+
+.like-container.disliked .like-text {
+  animation: moveDownAndFade 1.5s ease forwards; /* Animation for dislike action */
+}
+
+@keyframes moveUpAndFade {
+  0% {
+      bottom: 100%;
+      opacity: 1;
+  }
+  100% {
+      bottom: 150%; /* Move upwards */
+      opacity: 0;
+  }
+}
+
+@keyframes moveDownAndFade {
+  0% {
+      bottom: 150%; /* Start from the position above the heart */
+      opacity: 0;
+  }
+  100% {
+      bottom: 100%; /* Move downwards */
+      opacity: 1;
+  }
 }
