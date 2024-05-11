@@ -11,7 +11,7 @@ const LikeComponent = ({ id }: { id: string }) => {
         if (localStorage.getItem(`liked_${id}`)) {
             setLike(true);
         }
-    }, []);
+    }, [id]);
 
     const handleLikeClick = async () => {
         if (like) {

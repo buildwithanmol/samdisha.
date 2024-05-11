@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
+    "@next/third-parties": "^14.2.3",
     "@types/bcryptjs": "^2.4.6",
     "@types/js-cookie": "^3.0.6",
     "@types/jsonwebtoken": "^9.0.6",
     "@uiw/react-md-editor": "^4.0.4",
     "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.1.9",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.378.0",
@@ -26,6 +29,7 @@
     "react-hook-form": "^7.51.4",
     "react-markdown": "^9.0.1",
     "recoil": "^0.7.7",
+    "tailwind-merge": "^2.3.0",
     "zod": "^3.23.7"
   },
   "devDependencies": {

@@ -25,3 +25,5 @@ export default async function CategoryPage({ params }: { params: { category: str
         </main>
     )
 }
+
+export const dynamic = 'force-dynamic'

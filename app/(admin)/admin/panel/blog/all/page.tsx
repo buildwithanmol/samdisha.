@@ -38,3 +38,4 @@ const AllPage = async () => {
 }
 
 export default AllPage
+export const dynamic = 'force-dynamic'

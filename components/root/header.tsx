@@ -1,5 +1,6 @@
 import { get_categories } from '@/utils/actions'
 import { ArrowDown, ChevronDown, Facebook, Instagram, LucideInstagram } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
@@ -10,8 +11,8 @@ const Header = async () => {
       <nav className='flex items-center justify-between center py-6'>
         <div>
           <Link href={'/'}>
-          <h1 className='text-font font-medium text-2xl'><span className='text-white'>
-            Samdisha</span>.</h1></Link>
+            <h1 className='text-font font-medium text-2xl'><span className='text-white'>
+              Samdisha</span>.</h1></Link>
         </div>
         <div className='items-start gap-4 hidden md:flex'>
           {[{ name: 'Latest', href: '/latest' }, {
@@ -31,8 +32,20 @@ const Header = async () => {
             </div>
           ))}
         </div>
-        <div className='md:flex hidden items-center gap-2'>
-          {[{ icon: <Instagram />, href: 'https://instagram.com' }, { icon: <Facebook />, href: 'https://instagram.com' }].map((item, index) => (
+        <div className='flex  items-center gap-2'>
+          {[{
+            icon: <Image
+              src={'/pinterest.svg'}
+              alt='pinterest'
+              width={31}
+              height={31}
+            />, href: 'https://www.pinterest.com/samdishavishwakarma'
+          }, { icon: <Image
+            src={'/instagram.svg'}
+            alt='pinterest'
+            width={40}
+            height={40}
+          />, href: 'https://www.instagram.com/vishwakarmasamdisha/' }].map((item, index) => (
             <div key={index}>
               <Link href={item.href}>
                 {item.icon}

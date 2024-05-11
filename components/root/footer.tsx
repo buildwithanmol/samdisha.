@@ -29,7 +29,7 @@ const Footer = async () => {
         <div className='col-span-1'>
           <p className='light_text'>Links</p>
           <div className='flex flex-col gap-2 pt-2'>
-            {[{ name: 'Instagram', href: '/instagram' }, { name: 'Facebook', href: '/' }].map((item, index) => (
+            {[{ name: 'Pinterest', href: 'https://www.pinterest.com/samdishavishwakarma' }, { name: 'Instagram', href: 'https://www.instagram.com/vishwakarmasamdisha/' }].map((item, index) => (
               <Link key={index} href={item.href} className='hover:text-font'>{item.name}</Link>
             ))}
           </div>
