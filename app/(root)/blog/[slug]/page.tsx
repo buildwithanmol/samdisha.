@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export default async function BlogIdPage({ params }: { params: { id: string } }) {
+export default async function BlogIdPage({ params }: { params: { slug: string } }) {
     const data: {
         _id: string,
         title: string,
@@ -22,7 +22,7 @@ export default async function BlogIdPage({ params }: { params: { id: string } })
             title: string,
             link: string
         }[],
-    } = await get_blog(params.id);
+    } = await get_blog(params.slug);
     if (!data) {
         return redirect('/')
     }
@@ -68,8 +68,8 @@ export default async function BlogIdPage({ params }: { params: { id: string } })
     )
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-    const data = await get_blog(params.id);
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const data = await get_blog(params.slug);
     if (!data) {
         return {}
     }
@@ -79,6 +79,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
             title: data.og.title,
             description: data.og.description,
             tags: data.og.tags
-        }
+        },
+        keywords: data.og.tags
     }
 }

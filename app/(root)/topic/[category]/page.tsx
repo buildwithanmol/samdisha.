@@ -1,5 +1,6 @@
 import { get_blogs } from "@/actions/blog.action"
 import BlogComponent from "@/components/blog/blog-component";
+import { url_converter } from "../../latest/page";
 
 export default async function CategoryPage({ params }: { params: { category: string } }) {
     const data = params.category && (await get_blogs(0, 1000, params.category));
@@ -17,7 +18,7 @@ export default async function CategoryPage({ params }: { params: { category: str
                 {
                     data && data.map((item, index) => (
                         <div key={index} className="bg-container p-6 rounded-xl flex items-center justify-center">
-                            <BlogComponent link={`/blog/${item._id}`} title={item.title} short_title={item.subTitle} description={item.og.description} />
+                            <BlogComponent link={`/blog/${url_converter(item.title)}`} title={item.title} short_title={item.subTitle} description={item.og.description} />
                         </div>
                     ))
                 }

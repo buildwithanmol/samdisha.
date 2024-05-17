@@ -1,3 +1,4 @@
+import { url_converter } from '@/app/(root)/latest/page';
 import { get_categories, get_popular } from '@/utils/actions';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -10,7 +11,7 @@ const Sidebar = async () => {
         <div className='col-span-1'>
             <div className='space-y-2'>
                 <h1 className='text-accent uppercase text-md font-medium tracking-widest '> Top Categories </h1>
-                
+
                 <div className='flex flex-wrap gap-2 py-2'>
                     {
                         data && data.map((item, index) => (
@@ -28,7 +29,7 @@ const Sidebar = async () => {
                 <div className='flex flex-col gap-2 py-2'>
                     {
                         popular && popular.map((item, index) => (
-                            <Link key={index} href={`/blog/${item._id}`} className='flex items-center gap-3 font-light text-md'> <ArrowRight className='text-font ' /> {item.title}</Link>
+                            <Link key={index} href={`/blog/${url_converter(item.title)}`} className='flex items-center gap-3 font-light text-md'> <ArrowRight className='text-font ' /> {item.title}</Link>
                         ))
                     }
                 </div>

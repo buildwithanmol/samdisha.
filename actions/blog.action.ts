@@ -16,7 +16,7 @@ export const get_blogs = async (page?: number, limit?: number, category?: string
             query = {};
         }
 
-        const blogs = await Blog.find(query).skip(Number(page) * Number(limit)).limit(Number(limit)).sort({_id: -1});
+        const blogs = await Blog.find(query).skip(Number(page) * Number(limit)).limit(Number(limit)).sort({ _id: -1 });
 
         if (blogs.length === 0) {
             return null
@@ -30,10 +30,11 @@ export const get_blogs = async (page?: number, limit?: number, category?: string
     }
 }
 
-export const get_blog = async (_id: string) => {
+export const get_blog = async (slug: string) => {
     try {
         await connectDB();
-        const data = await Blog.find({ _id });
+        const slug_ = slug.replace(/-/g, ' ');
+        const data = await Blog.find({ 'title': new RegExp('^' + slug_ + '$', 'i')  });
         if (data.length === 0) {
             return null;
         }

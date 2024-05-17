@@ -2,6 +2,7 @@ import { get_blogs } from "@/actions/blog.action";
 import BlogComponent from "@/components/blog/blog-component";
 import { Hero } from "@/components/root/hero";
 import Sidebar from "@/components/root/sidebar";
+import { url_converter } from "./latest/page";
 
 export default async function Home() {
   const data = await get_blogs(0, 20);
@@ -14,7 +15,7 @@ export default async function Home() {
           <br />
           <br />
           <div className="">
-            {data && data.map((item: any, index: number) => <BlogComponent key={index} link={`/blog/${item._id}`} title={item.title} short_title={item.subTitle} description={item.og.description} />)}
+            {data && data.map((item: any, index: number) => <BlogComponent key={index} link={`/blog/${url_converter(item.title)}`} title={item.title} short_title={item.subTitle} description={item.og.description} />)}
           </div>
         </div>
         <Sidebar />

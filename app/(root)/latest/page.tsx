@@ -4,6 +4,7 @@ import React from 'react'
 
 const LatestPage = async () => {
     const data = await get_blogs(0, 1000);
+    
     return (
         <section className='center py-10'>
             <h1 className='text-2xl font-semibold mb-6 '>Latest Posts</h1>
@@ -11,7 +12,7 @@ const LatestPage = async () => {
                 {
                     data && data.map((item, index) => (
                         <div key={index} className="bg-container p-6 rounded-xl flex items-center justify-center">
-                            <BlogComponent link={`/blog/${item._id}`} title={item.title} short_title={item.subTitle} description={item.og.description} />
+                            <BlogComponent link={`/blog/${url_converter(item.title)}`} title={item.title} short_title={item.subTitle} description={item.og.description} />
                         </div>
                     ))
                 }
@@ -20,5 +21,10 @@ const LatestPage = async () => {
     )
 }
 
-export default LatestPage
+export default LatestPage;
+
+export function url_converter(url: string) {
+    return url.replace(/\s+/g, '-').toLowerCase();
+};
+
 export const dynamic = 'force-dynamic'

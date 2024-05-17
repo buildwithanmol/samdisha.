@@ -1,4 +1,5 @@
 import { get_blogs } from '@/actions/blog.action'
+import { url_converter } from '@/app/(root)/latest/page';
 import DeleteButton from '@/components/buttons/delete-button';
 import { EditIcon, Link2Icon } from 'lucide-react';
 import Link from 'next/link';
@@ -14,7 +15,7 @@ const AllPage = async () => {
                     <div key={index} className='border py-2 px-4 border-container'>
                         <div className='border-b border-container py-2 space-y-2 '>
                             <p className='uppercase tracking-widest font-semibold flex items-center gap-2'>
-                                <Link className='text-accent' href={`/blog/${item._id}`}> <Link2Icon size={16} /> </Link>
+                                <Link className='text-accent' href={`/blog/${url_converter(item.title)}`}> <Link2Icon size={16} /> </Link>
                                 {item.title}
                             </p>
                             <p className='text-[#7e8c9a] text-sm'>
