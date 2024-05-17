@@ -1,6 +1,6 @@
 import { get_blogs } from "@/actions/blog.action"
 import BlogComponent from "@/components/blog/blog-component";
-import { url_converter } from "../../latest/page";
+import { url_converter } from "@/utils/helpers";
 
 export default async function CategoryPage({ params }: { params: { category: string } }) {
     const data = params.category && (await get_blogs(0, 1000, params.category));

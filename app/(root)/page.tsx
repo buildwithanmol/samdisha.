@@ -2,7 +2,7 @@ import { get_blogs } from "@/actions/blog.action";
 import BlogComponent from "@/components/blog/blog-component";
 import { Hero } from "@/components/root/hero";
 import Sidebar from "@/components/root/sidebar";
-import { url_converter } from "./latest/page";
+import { url_converter } from "@/utils/helpers";
 
 export default async function Home() {
   const data = await get_blogs(0, 20);

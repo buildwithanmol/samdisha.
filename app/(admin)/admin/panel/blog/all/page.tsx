@@ -1,6 +1,6 @@
 import { get_blogs } from '@/actions/blog.action'
-import { url_converter } from '@/app/(root)/latest/page';
 import DeleteButton from '@/components/buttons/delete-button';
+import { url_converter } from '@/utils/helpers';
 import { EditIcon, Link2Icon } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react'

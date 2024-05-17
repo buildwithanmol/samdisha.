@@ -1,5 +1,6 @@
 import { get_blogs } from '@/actions/blog.action'
 import BlogComponent from '@/components/blog/blog-component'
+import { url_converter } from '@/utils/helpers';
 import React from 'react'
 
 const LatestPage = async () => {
@@ -22,9 +23,5 @@ const LatestPage = async () => {
 }
 
 export default LatestPage;
-
-export function url_converter(url: string) {
-    return url.replace(/\s+/g, '-').toLowerCase();
-};
 
 export const dynamic = 'force-dynamic'

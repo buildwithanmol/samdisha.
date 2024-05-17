@@ -1,5 +1,5 @@
-import { url_converter } from '@/app/(root)/latest/page';
 import { get_categories, get_popular } from '@/utils/actions';
+import { url_converter } from '@/utils/helpers';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react'
