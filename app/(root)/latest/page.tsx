@@ -24,4 +24,3 @@ const LatestPage = async () => {
 
 export default LatestPage;
 
-export const dynamic = 'force-dynamic'
